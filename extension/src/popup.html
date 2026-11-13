@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UltraCalcPal Fuel Calculator</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <img src="icons/icon-48.png" alt="" width="28" height="28" />
+      <h1>UltraCalcPal Fuel Calculator</h1>
+    </header>
+    <p class="hint">Carbs, fluids and sodium per hour for your ultra.</p>
+
+    <label for="weight">Your weight</label>
+    <div class="row">
+      <input id="weight" type="number" min="30" max="440" step="any" placeholder="70" />
+      <fieldset class="seg">
+        <legend>Unit</legend>
+        <label><input type="radio" name="unit" value="kg" checked /> kg</label>
+        <label><input type="radio" name="unit" value="lb" /> lb</label>
+      </fieldset>
+    </div>
+
+    <label for="hours">Hours you expect to be out</label>
+    <input id="hours" type="number" min="1" max="48" step="0.5" placeholder="14" />
+
+    <label for="effort">Effort</label>
+    <select id="effort">
+      <option value="low">Easy: zones 1 to 2, you could chat the whole way</option>
+      <option value="moderate" selected>Steady: zone 3, most ultras sit here</option>
+      <option value="high">Hard: zone 4, short sentences only</option>
+      <option value="extreme">All out: zone 5 and up</option>
+    </select>
+
+    <label for="weather">Weather</label>
+    <select id="weather">
+      <option value="cool">Cool: under 10 °C (50 °F)</option>
+      <option value="moderate" selected>Mild: 10 to 20 °C (50 to 68 °F)</option>
+      <option value="hot">Hot: 20 to 30 °C (68 to 86 °F)</option>
+      <option value="extreme">Very hot: over 30 °C (86 °F)</option>
+    </select>
+
+    <fieldset class="opts">
+      <legend>Options</legend>
+      <label><input type="checkbox" id="dualCarb" /> Glucose + fructose</label>
+      <label><input type="checkbox" id="altitude" /> Above 2000 m</label>
+      <label><input type="checkbox" id="caffeine" /> Caffeine</label>
+      <label><input type="checkbox" id="realFood" /> Real food</label>
+    </fieldset>
+
+    <button class="go" id="go">Work it out</button>
+    <div class="result" id="out" role="status" aria-live="polite"></div>
+
+    <footer>
+      <p>Free. Nothing is sent anywhere; only your unit choice is stored.</p>
+      <p>
+        <a
+          href="https://www.ultracalcpal.com/?utm_source=extension&utm_medium=listing"
+          target="_blank"
+          rel="noopener"
+          >Save a plan and add aid stations at ultracalcpal.com</a
+        >
+      </p>
+    </footer>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

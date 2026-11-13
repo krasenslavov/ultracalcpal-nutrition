@@ -1,0 +1,201 @@
+/* The app's Classic and dark palettes (src/styles/tokens.css), forest green accent. */
+:root {
+  --paper: #faf6ef;
+  --ink: #1c1915;
+  --ink-2: #4b4640;
+  --accent: #4f7a3a;
+  --accent-soft: #e6eddc;
+  --on-accent: #fbf8f0;
+  --line: #e3dccf;
+  --field: #fffdf9;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1c1915;
+    --ink: #f3ede2;
+    --ink-2: #cbc2b3;
+    --accent: #6a9552;
+    --accent-soft: #2f4d25;
+    --on-accent: #fbf8f0;
+    --line: #3a352d;
+    --field: #262220;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 360px;
+  margin: 0;
+  padding: 14px;
+  background: var(--paper);
+  color: var(--ink);
+  font:
+    14px/1.4 system-ui,
+    sans-serif;
+}
+header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+h1 {
+  font:
+    600 17px/1.2 Georgia,
+    serif;
+  margin: 0;
+}
+.hint {
+  color: var(--ink-2);
+  margin: 6px 0 8px;
+}
+label,
+.lbl {
+  display: block;
+  font-weight: 600;
+  margin: 10px 0 4px;
+}
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.row input[type="number"] {
+  flex: 1;
+  min-width: 0;
+}
+fieldset.seg,
+fieldset.opts {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 12px;
+}
+fieldset.seg label,
+fieldset.opts label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  font-weight: 400;
+  min-height: 44px;
+  white-space: nowrap;
+}
+fieldset.seg legend {
+  position: absolute;
+  left: -9999px;
+}
+fieldset.opts {
+  flex-wrap: wrap;
+  gap: 2px 14px;
+  margin-top: 8px;
+}
+fieldset.opts legend {
+  font-weight: 600;
+  padding: 0;
+  margin-bottom: 2px;
+}
+input[type="number"],
+select {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--field);
+  color: var(--ink);
+  font: inherit;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+}
+.go {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 12px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font:
+    600 15px system-ui,
+    sans-serif;
+  cursor: pointer;
+}
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+.result {
+  margin-top: 12px;
+}
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin: 0 0 10px;
+  padding: 0;
+  list-style: none;
+}
+.tiles li {
+  background: var(--accent-soft);
+  border-radius: 10px;
+  padding: 8px;
+  text-align: center;
+}
+.tiles .big {
+  display: block;
+  font:
+    600 20px/1.2 Georgia,
+    serif;
+}
+.tiles .lbl {
+  display: block;
+  margin: 2px 0 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+.result h2 {
+  font:
+    600 13px/1.2 system-ui,
+    sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  margin: 12px 0 4px;
+}
+.result p {
+  margin: 4px 0;
+}
+.result ul.fuel {
+  margin: 0;
+  padding-left: 18px;
+}
+.result ul.fuel li {
+  margin: 2px 0;
+}
+.err {
+  color: #a33a1a;
+}
+@media (prefers-color-scheme: dark) {
+  .err {
+    color: #ff9b7a;
+  }
+}
+footer {
+  margin-top: 14px;
+  color: var(--ink-2);
+  font-size: 12px;
+}
+footer p {
+  margin: 2px 0;
+}
+footer a {
+  color: var(--ink);
+}

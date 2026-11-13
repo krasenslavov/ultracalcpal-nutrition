@@ -1,0 +1,63 @@
+{
+  "name": "ultracalcpal-nutrition",
+  "version": "1.0.0",
+  "description": "Ultra-marathon fuelling maths with no dependencies: carbs, fluids and sodium per hour, fuel ideas, carb loading and recovery, aid-station segments and drop bags, heat index and WBGT, risk flags.",
+  "keywords": [
+    "running",
+    "ultramarathon",
+    "ultra",
+    "trail-running",
+    "nutrition",
+    "fuelling",
+    "hydration",
+    "sodium",
+    "carbohydrates",
+    "aid-station",
+    "heat-index",
+    "wbgt"
+  ],
+  "license": "MIT",
+  "author": "UltraCalcPal <contact@ultracalcpal.com> (https://www.ultracalcpal.com)",
+  "homepage": "https://www.ultracalcpal.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krasenslavov/ultracalcpal-nutrition.git",
+    "directory": "packages/nutrition"
+  },
+  "bugs": {
+    "url": "https://github.com/krasenslavov/ultracalcpal-nutrition/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "prepublishOnly": "node build.mjs",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0",
+    "typescript": "^5.6.0",
+    "vitest": "^5.0.0"
+  }
+}
